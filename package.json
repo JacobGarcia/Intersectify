@@ -1,0 +1,27 @@
+{
+  "name": "intersectify",
+  "version": "0.1.0-alpha",
+  "description": "A Spotify application to create playlists with the songs that you and your friends have in common — Edit",
+  "main": "app.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JacobGarcia/Intersectify.git"
+  },
+  "keywords": [
+    "spotify",
+    "app",
+    "friends"
+  ],
+  "author": "Jacob Garcia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JacobGarcia/Intersectify/issues"
+  },
+  "homepage": "https://github.com/JacobGarcia/Intersectify#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
+}
