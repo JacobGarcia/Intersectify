@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Example of the Authorization Code flow with Spotify</title>
+    <title>Example of the Authorization Code Flow with Spotify</title>
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
     <style type="text/css">
       #login, #loggedin {
@@ -19,8 +19,9 @@
   <body>
     <div class="container">
       <div id="login">
-        <h1>This is an example of the Authorization Code flow</h1>
+        <h1>This is an example of the Authorization Code Flow</h1>
         <a href="/login" class="btn btn-primary">Log in with Spotify</a>
+        <a onclick="getUserTracks()" class="btn btn-primary">Get User Tracks</a>
       </div>
       <div id="loggedin">
         <div id="user-profile">
@@ -137,6 +138,27 @@
         }
       })();
     </script>
+    <script>
+      // Additional Functionality
+      // Getting user tracks
+      // curl -X GET "https://api.spotify.com/v1/me/tracks" -H "Accept: application/json" -H "Authorization: Bearer BQCjvXjTTrWipGnN_tirYk802U7XdKvsO2_cWGpNZ8zAMLCaNY3_MYOAyrt-OZcraRO5r8kIOnYq_cOgvoSQ20MTlnH6tMv5FFcHmiOJY73JeDv_9fEBCO25x94g-07UawiRyJXzQ1BjTrVQbiUDFhOKpWELAeOLFjYxLf28oGZF"
+
+
+      function getUserTracks(){
+        var accessToken = "BQCroqHs5fnBgUGv-9ypYycY9vd3MdOsjQD-au0_2JLGoifR8pSI7n7OsUlF-VD7Oahk-yi1ZlKfIvVHolBdYhbT4qhHVpP1T-g8JlSmrI5YB90fQNqXSh1RElX2vWop5MaKpfb5jMQdiHAlwKDrk2NZTc12SfuQ5-J7QoDgho5n"
+        $.ajax(
+        {
+            url: "https://api.spotify.com/v1/me/tracks",
+            type: "GET",
+            headers: {
+              'Accept' : 'application/json',
+              'Authorization' : 'Bearer ' + accessToken
+            },
+            success: function (response){
+              console.log(response);
+            },
+        });
+      }
+    </script>
   </body>
 </html>
-
